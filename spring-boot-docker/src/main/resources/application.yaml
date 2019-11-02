@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  tomcat.max-http-header-size: 2048000
+spring:
+  profiles:
+    active: default
+---
+spring:
+  profiles: default
+  application :
+    name: mall-share-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 8081
+    servlet:
+      context-path: /
+    ssl:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+
+
